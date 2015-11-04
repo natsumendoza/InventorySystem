@@ -78,10 +78,17 @@
     <Compile Include="Database\CategoryDatabase.vb" />
     <Compile Include="Database\Database.vb" />
     <Compile Include="Database\InventoryDatabase.vb" />
+    <Compile Include="Database\UserDatabase.vb" />
     <Compile Include="Inventory\EditInventory.Designer.vb">
       <DependentUpon>EditInventory.vb</DependentUpon>
     </Compile>
     <Compile Include="Inventory\EditInventory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Products\Category\EditCategory.Designer.vb">
+      <DependentUpon>EditCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Products\Category\EditCategory.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inventory\Products\EditProducts.Designer.vb">
@@ -100,6 +107,12 @@
       <DependentUpon>ProductList.vb</DependentUpon>
     </Compile>
     <Compile Include="Inventory\Products\ProductList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Products\Unit\EditUnit.Designer.vb">
+      <DependentUpon>EditUnit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Products\Unit\EditUnit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\MyAccount.Designer.vb">
@@ -160,6 +173,9 @@
     <EmbeddedResource Include="Inventory\EditInventory.resx">
       <DependentUpon>EditInventory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Products\Category\EditCategory.resx">
+      <DependentUpon>EditCategory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory\Products\EditProducts.resx">
       <DependentUpon>EditProducts.vb</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\Products\ProductList.resx">
       <DependentUpon>ProductList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Products\Unit\EditUnit.resx">
+      <DependentUpon>EditUnit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\MyAccount.resx">
       <DependentUpon>MyAccount.vb</DependentUpon>
