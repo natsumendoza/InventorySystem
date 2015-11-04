@@ -8,10 +8,17 @@
     ' Subsequently, My.User will return identity information encapsulated in the CustomPrincipal object
     ' such as the username, display name, etc.
 
-    Dim sqlObj As Database
+    Dim userSqlObj As New UserDatabase
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
-        Me.Close()
+        Dim name As String = userSqlObj.login(UsernameTextBox.Text.ToString, PasswordTextBox.Text.ToString)
+        If name <> "failed" Then
+            Me.Hide()
+            Form1.Show()
+            MsgBox("Welcome " & name)
+        Else
+            MsgBox("Login Failed!")
+        End If
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -19,14 +26,6 @@
     End Sub
 
     Private Sub LoginForm1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        sqlObj = New Database
-
-        If sqlObj.checkConnection Then
-            MsgBox("Database Online!")
-            Console.WriteLine("Database Online!")
-        Else
-            MsgBox("Database Offline!")
-        End If
 
     End Sub
 End Class
