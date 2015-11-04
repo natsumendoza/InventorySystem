@@ -4,11 +4,10 @@ Public Class UserDatabase
     Private cmd As MySqlCommand
     Private reader As MySqlDataReader
     Private conn = New MySqlConnection
-    Private name As String
+
     Private id As String
 
     Sub New()
-        name = ""
         id = ""
     End Sub
 
@@ -66,7 +65,6 @@ Public Class UserDatabase
             If count <> 0 Then
                 loginBool = True
                 id = reader.GetString("id")
-                name = getInfoNameById(id)
             End If
 
             reader.Close()
@@ -80,10 +78,11 @@ Public Class UserDatabase
         Return loginBool
     End Function
 
-    Public Function getInfoNameById(id As Integer) As String
-        Dim name As String = ""
-        Dim query As String
-        query = "select first_name as first from user_info where user_id=@id "
+    Public Function getAllUserInfo() As List(Of String)
+
+        Dim list As List(Of String) = Nothing
+        Dim query As String = ""
+        query = "select user.username, user_info.first_name, user_info.last_name, user_info.middle_name, user_info.date_of_birth from user inner join user_info on user.user_id=@id "
 
         openConnection()
 
@@ -101,27 +100,22 @@ Public Class UserDatabase
             End While
 
             If count <> 0 Then
-                name = reader.GetString("first")
+                list.Add(reader.GetString("username"))
+                list.Add(reader.GetString("first_name"))
+                list.Add(reader.GetString("last_name"))
+                list.Add(reader.GetString("middle_name"))
+                list.Add(reader.GetString("date_of_birth"))
             End If
 
             reader.Close()
 
         Catch ex As Exception
-            Console.WriteLine(ex.Message)
-            MsgBox(ex.Message)
+
         End Try
 
         closeConnection()
 
-        Return name
-    End Function
-
-    Public Function getFirstName() As String
-        Return name
-    End Function
-
-    Public Function getUserId() As String
-        Return id
+        Return list
     End Function
 
 End Class
