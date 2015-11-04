@@ -11,6 +11,8 @@
     Dim userSqlObj As New UserDatabase
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
+        UserPanel.Show()
+        Me.Close()
     End Sub
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
