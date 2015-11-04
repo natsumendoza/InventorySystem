@@ -24,6 +24,9 @@ Partial Class UserPanel
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserPanel))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolStripButton9 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton6 = New System.Windows.Forms.ToolStripButton()
@@ -32,8 +35,6 @@ Partial Class UserPanel
         Me.ToolStripButton11 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton8 = New System.Windows.Forms.ToolStripButton()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,10 +49,40 @@ Partial Class UserPanel
         Me.ToolStrip1.TabIndex = 1
         Me.ToolStrip1.Text = "ToolStrip1"
         '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 89)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(991, 33)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Tagline tagline tagline"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Arial Black", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 48)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(991, 41)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Cafroozzo Café"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(12, 122)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(991, 23)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Hi <name>"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'ToolStripButton9
         '
         Me.ToolStripButton9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripButton9.Image = CType(resources.GetObject("ToolStripButton9.Image"), System.Drawing.Image)
+        Me.ToolStripButton9.Image = Global.InventorySystem.My.Resources.Resources.summary_icon
         Me.ToolStripButton9.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton9.Name = "ToolStripButton9"
         Me.ToolStripButton9.Size = New System.Drawing.Size(110, 36)
@@ -60,7 +91,7 @@ Partial Class UserPanel
         'ToolStripButton1
         '
         Me.ToolStripButton1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.Image = Global.InventorySystem.My.Resources.Resources.money_stack_icon
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
         Me.ToolStripButton1.Size = New System.Drawing.Size(84, 36)
@@ -87,7 +118,7 @@ Partial Class UserPanel
         'ToolStripButton10
         '
         Me.ToolStripButton10.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripButton10.Image = Global.InventorySystem.My.Resources.Resources.drop_box_icon
+        Me.ToolStripButton10.Image = Global.InventorySystem.My.Resources.Resources.inventory_maintenance_256
         Me.ToolStripButton10.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton10.Name = "ToolStripButton10"
         Me.ToolStripButton10.Size = New System.Drawing.Size(104, 36)
@@ -96,7 +127,7 @@ Partial Class UserPanel
         'ToolStripButton11
         '
         Me.ToolStripButton11.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.ToolStripButton11.Image = CType(resources.GetObject("ToolStripButton11.Image"), System.Drawing.Image)
+        Me.ToolStripButton11.Image = Global.InventorySystem.My.Resources.Resources.Settings_L_icon
         Me.ToolStripButton11.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton11.Name = "ToolStripButton11"
         Me.ToolStripButton11.Size = New System.Drawing.Size(85, 36)
@@ -105,7 +136,7 @@ Partial Class UserPanel
         'ToolStripButton4
         '
         Me.ToolStripButton4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
+        Me.ToolStripButton4.Image = Global.InventorySystem.My.Resources.Resources.inventory_icon_4
         Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton4.Name = "ToolStripButton4"
         Me.ToolStripButton4.Size = New System.Drawing.Size(99, 36)
@@ -120,32 +151,13 @@ Partial Class UserPanel
         Me.ToolStripButton8.Size = New System.Drawing.Size(85, 36)
         Me.ToolStripButton8.Text = "Users"
         '
-        'Label1
-        '
-        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 89)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(991, 33)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Tagline tagline tagline"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label2
-        '
-        Me.Label2.Font = New System.Drawing.Font("Arial Black", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 48)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(991, 41)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Cafroozzo Café"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
         'UserPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1015, 435)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ToolStrip1)
@@ -169,5 +181,6 @@ Partial Class UserPanel
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 
 End Class

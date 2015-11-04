@@ -233,7 +233,21 @@
   <ItemGroup>
     <None Include="My Project\resources\user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="My Project\resources\money-stack-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\inventory_maintenance_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\inventory-icon-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\Settings-L-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\summary-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
