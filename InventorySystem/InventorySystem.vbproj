@@ -49,7 +49,7 @@
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.8\Assemblies\v4.0\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.8\Assemblies\v4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -85,6 +85,12 @@
     <Compile Include="Inventory\EditInventory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inventory\Products\Category\EditCategory.Designer.vb">
+      <DependentUpon>EditCategory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Products\Category\EditCategory.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inventory\Products\EditProducts.Designer.vb">
       <DependentUpon>EditProducts.vb</DependentUpon>
     </Compile>
@@ -101,6 +107,12 @@
       <DependentUpon>ProductList.vb</DependentUpon>
     </Compile>
     <Compile Include="Inventory\Products\ProductList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Products\Unit\EditUnit.Designer.vb">
+      <DependentUpon>EditUnit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Products\Unit\EditUnit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login\MyAccount.Designer.vb">
@@ -161,6 +173,9 @@
     <EmbeddedResource Include="Inventory\EditInventory.resx">
       <DependentUpon>EditInventory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Products\Category\EditCategory.resx">
+      <DependentUpon>EditCategory.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inventory\Products\EditProducts.resx">
       <DependentUpon>EditProducts.vb</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inventory\Products\ProductList.resx">
       <DependentUpon>ProductList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Products\Unit\EditUnit.resx">
+      <DependentUpon>EditUnit.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\MyAccount.resx">
       <DependentUpon>MyAccount.vb</DependentUpon>
@@ -214,7 +232,21 @@
   <ItemGroup>
     <None Include="My Project\resources\user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="My Project\resources\money-stack-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\inventory_maintenance_256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\inventory-icon-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\Settings-L-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\summary-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
