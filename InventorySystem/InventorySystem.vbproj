@@ -22,6 +22,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>InventorySystem.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,10 +47,6 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.9.8\Assemblies\v4.0\MySql.Data.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -74,22 +71,59 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Databases\CategoryDatabase.vb" />
-    <Compile Include="Databases\Database.vb" />
-    <Compile Include="Databases\InventoryDatabase.vb" />
-    <Compile Include="Databases\ProductDatabase.vb" />
-    <Compile Include="Databases\UserDatabase.vb" />
-    <Compile Include="Form1.vb">
+    <Compile Include="Inventory\EditInventory.Designer.vb">
+      <DependentUpon>EditInventory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\EditInventory.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Inventory\Products\EditProducts.Designer.vb">
+      <DependentUpon>EditProducts.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Products\EditProducts.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm1.Designer.vb">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
+    <Compile Include="Inventory\InventoryList.Designer.vb">
+      <DependentUpon>InventoryList.vb</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm1.vb">
+    <Compile Include="Inventory\InventoryList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory\Products\ProductList.Designer.vb">
+      <DependentUpon>ProductList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\Products\ProductList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\MyAccount.Designer.vb">
+      <DependentUpon>MyAccount.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\MyAccount.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\EditUser.Designer.vb">
+      <DependentUpon>EditUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User\EditUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserPanel.Designer.vb">
+      <DependentUpon>UserPanel.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\LoginUser.Designer.vb">
+      <DependentUpon>LoginUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginUser.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -107,13 +141,40 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="User\UserList.Designer.vb">
+      <DependentUpon>UserList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User\UserList.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Inventory\EditInventory.resx">
+      <DependentUpon>EditInventory.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm1.resx">
-      <DependentUpon>LoginForm1.vb</DependentUpon>
+    <EmbeddedResource Include="Inventory\Products\EditProducts.resx">
+      <DependentUpon>EditProducts.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\InventoryList.resx">
+      <DependentUpon>InventoryList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory\Products\ProductList.resx">
+      <DependentUpon>ProductList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\MyAccount.resx">
+      <DependentUpon>MyAccount.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\EditUser.resx">
+      <DependentUpon>EditUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPanel.resx">
+      <DependentUpon>UserPanel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginUser.resx">
+      <DependentUpon>LoginUser.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -121,8 +182,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\UserList.resx">
+      <DependentUpon>UserList.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -133,6 +198,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\drop-box-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
