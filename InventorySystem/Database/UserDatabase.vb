@@ -5,9 +5,11 @@ Public Class UserDatabase
     Private reader As MySqlDataReader
     Private conn = New MySqlConnection
     Private name As String
+    Private id As String
 
     Sub New()
         name = ""
+        id = ""
     End Sub
 
     Public Sub openConnection()
@@ -63,8 +65,11 @@ Public Class UserDatabase
 
             If count <> 0 Then
                 loginBool = True
+                id = reader.GetString("id")
+                name = getInfoNameById(id)
             End If
 
+            reader.Close()
         Catch ex As Exception
             Console.WriteLine(ex.Message)
             MsgBox(ex.Message)
@@ -73,6 +78,50 @@ Public Class UserDatabase
         closeConnection()
 
         Return loginBool
+    End Function
+
+    Public Function getInfoNameById(id As Integer) As String
+        Dim name As String = ""
+        Dim query As String
+        query = "select first_name as first from user_info where user_id=@id "
+
+        openConnection()
+
+        Try
+            cmd = New MySqlCommand(query, conn)
+
+            cmd.Parameters.Add(New MySqlParameter("id", id))
+
+            reader = cmd.ExecuteReader
+
+            Dim count As Integer = 0
+
+            While reader.Read
+                count += 1
+            End While
+
+            If count <> 0 Then
+                name = reader.GetString("first")
+            End If
+
+            reader.Close()
+
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            MsgBox(ex.Message)
+        End Try
+
+        closeConnection()
+
+        Return name
+    End Function
+
+    Public Function getFirstName() As String
+        Return name
+    End Function
+
+    Public Function getUserId() As String
+        Return id
     End Function
 
 End Class
